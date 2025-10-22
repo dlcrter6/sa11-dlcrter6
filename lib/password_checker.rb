@@ -24,5 +24,7 @@
 # - Use positive lookaheads to check for each character type requirement
 # - Use anchors to match the entire string
 def strong_password?(password)
-  # TODO: Implement password validation using regex
+  pattern = /\A(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}\z/
+
+  !!(password =~ pattern)
 end
